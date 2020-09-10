@@ -1,0 +1,33 @@
+:root {
+  --grid-cols: 5;
+  --grid-rows: 5;
+}
+
+html, * {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 64px;
+}
+
+#grid {
+  display: grid;
+  grid-gap: 1rem; 
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-item {
+  padding: 1rem;
+  border: 1px solid #222222;
+  text-align: center
+}
