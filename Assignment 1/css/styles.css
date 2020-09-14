@@ -1,14 +1,25 @@
 :root {
-  --grid-cols: 5;
-  --grid-rows: 5;
+  --grid-cols: 6;
+  --grid-rows: 6;
 }
-
 html, * {
   box-sizing: border-box;
 }
-
-html {
+html, body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #E0EBFF;
+  color: #4F4F4F;
+}
+
+.title {
+  margin-bottom: 0;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 32px;
 }
 
 .container {
@@ -16,18 +27,30 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 64px;
+  padding-top: 24px;
 }
 
 #grid {
   display: grid;
-  grid-gap: 1rem; 
+  grid-gap: 0.25rem; 
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
-
 .grid-item {
-  padding: 1rem;
-  border: 1px solid #222222;
-  text-align: center
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+.grid-item-content {
+  background-color: #E55770;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.odd-item:hover, .odd-item:active {
+  transform: scale(1.4);
+}
+.odd-item-content {
+  background-color: #01DCA1;
 }
