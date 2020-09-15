@@ -2,6 +2,7 @@
 const gridSize = 6;
 const gridElement = document.getElementById("grid");
 const subTitleElement = document.getElementById("subtitle");
+const trialsElement = document.getElementById("trials");
 
 // Define test
 let testActive = false;
@@ -26,11 +27,13 @@ function oddClicked() {
         let deltaTime = currentTime - lastTimeGridWasShown;
         reactionTimes.push(deltaTime);
         trialsLeft--;
+        trialsElement.innerText = "Remaining tests: " + trialsLeft;
     }
     else {
         // Test started
         testActive = true;
         trialsLeft = amountOfTrials;
+        trialsElement.innerText = "Remaining tests: " + trialsLeft;
     }
 
     // Create new grid after delay if there are more trials left, otherwise end test
@@ -55,6 +58,9 @@ function createRandomGrid(row, col) {
     // The odd object to identify
     let oddItemIndex = Math.floor((row * col) * Math.random());
 
+    // Get random item type
+    let randomItemType = Math.floor(3 * Math.random()) + 1;
+
     for (let i = 0; i < row * col; i++) {
         // Create grid item
         let item = document.createElement("div");
@@ -65,13 +71,12 @@ function createRandomGrid(row, col) {
         // Create grid items content
         let itemContent = document.createElement("div");
         item.appendChild(itemContent);
-        itemContent.className = "grid-item-content";
+        itemContent.className = "grid-item-content-" + randomItemType;
 
         // Mark the odd item
         if (i === oddItemIndex) {
-            itemContent.className += " odd-item-content";
-            item.className += " odd-item";
             item.onclick = oddClicked;
+            itemContent.className += " odd-item-content-" + randomItemType;
         }
     }
 
@@ -93,7 +98,7 @@ function createRandomGrid(row, col) {
 
     // Update subtitle text
     if (testActive) {
-        subTitleElement.innerText = "Find the odd item!";
+        subTitleElement.innerText = "Find and click the odd item!";
     }
 }
 

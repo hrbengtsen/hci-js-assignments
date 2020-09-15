@@ -42,15 +42,32 @@ html, body {
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
-.grid-item-content {
+.grid-item:hover, .grid-item:active {
+  transform: scale(1.25);
+}
+
+.grid-item-content-1 {
   background-color: #E55770;
   padding: 0.5rem;
   border-radius: 50%;
 }
-
-.odd-item:hover, .odd-item:active {
-  transform: scale(1.4);
+.grid-item-content-2 {
+  background-color: #4F4F4F;
+  padding: 0.5rem;
+  border-radius: 50%;
 }
-.odd-item-content {
+.grid-item-content-3 {
+  background-color: #009EFF;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.odd-item-content-1 {
   background-color: #01DCA1;
+}
+.odd-item-content-2 {
+  border-radius: 0;
+}
+.odd-item-content-3 {
+  transform: scale(1.5);
 }
