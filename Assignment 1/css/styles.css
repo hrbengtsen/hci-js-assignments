@@ -5,8 +5,9 @@
 html, * {
   box-sizing: border-box;
 }
-html, body {
+html, body, button {
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   background-color: #E0EBFF;
@@ -36,14 +37,14 @@ html, body {
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
-.grid-item {
+.grid-item, .odd-item {
   padding: 2rem;
   text-align: center;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
-.grid-item:hover, .grid-item:active {
-  transform: scale(1.25);
+.odd-item:hover, .odd-item:active {
+  transform: scale(1.3);
 }
 
 .grid-item-content-1 {
@@ -52,7 +53,7 @@ html, body {
   border-radius: 50%;
 }
 .grid-item-content-2 {
-  background-color: #4F4F4F;
+  background-color: #F1592A;
   padding: 0.5rem;
   border-radius: 50%;
 }
@@ -69,5 +70,91 @@ html, body {
   border-radius: 0;
 }
 .odd-item-content-3 {
-  transform: scale(1.5);
+  transform: scale(1.6);
+}
+
+.fadeInLeft {
+  opacity: 0;
+  animation-duration: 350ms;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 350ms;
+  -webkit-animation-fill-mode: both;
+
+  animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.resultsTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+#best {
+  animation-delay: 300ms;
+  -webkit-animation-delay: 300ms;
+}
+#worst {
+  animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+}
+#mean {
+  animation-delay: 700ms;
+  -webkit-animation-delay: 700ms;
+}
+#sd {
+  animation-delay: 900ms;
+  -webkit-animation-delay: 900ms;
+}
+
+.retryButton {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: all .2s ease-in-out;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  border: 0;
+  background-color: #FFCF2F;
+  border-radius: 4px;
+}
+.retryButton:hover, .retryButton:focus {
+  text-decoration: none;
+  transform: scale(1.05);
+}
+.retryButton:active {
+  transform: scale(1);
+}
+
+.best-overall {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+}
+
+.best-overall:last-child {
+  top: 40px;
+}
+
+#all-times-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  width: 200px;
+}
+
+#all-times-wrapper p {
+  margin-bottom: 0;
+  flex-basis: 50%;
 }
