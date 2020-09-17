@@ -200,20 +200,6 @@ function createRandomGrid(row, col) {
         }
     }
 
-    // Hide random items for more random "grid"
-    let itemsToHide = [];
-    const numberOfItemsToHide = 8;
-
-    while (itemsToHide.length < numberOfItemsToHide) {
-        let randomIndex = Math.floor((row * col) * Math.random());
-
-        // Only hide if it isn't already and isn't the odd item
-        if (itemsToHide.indexOf(randomIndex) === -1 && randomIndex !== oddItemIndex) {
-            itemsToHide.push(randomIndex);
-            document.getElementById("item-" + randomIndex).style.visibility = "hidden";
-        }
-    }
-
     // Remember when grid was shown
     lastTimeGridWasShown = new Date().getTime();
 
