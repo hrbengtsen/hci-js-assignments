@@ -17,7 +17,7 @@ let bestOverallTime = JSON.parse(localStorage.getItem("best-overall-time"));
 let bestOverallMean = JSON.parse(localStorage.getItem("best-overall-mean"));
 
 // Set best-overall-time
-if (bestOverallTime < 100000) {
+if (bestOverallTime < 100000 && bestOverallTime !== null) {
     document.getElementById("best-overall-time").innerText = bestOverallTime + "ms";
 }
 else {
@@ -27,7 +27,7 @@ else {
 }
 
 // Set best-overall-mean
-if (bestOverallMean < 100000) {
+if (bestOverallMean < 100000 && bestOverallMean !== null) {
     document.getElementById("best-overall-mean").innerText = bestOverallMean + "ms";
 }
 else {
