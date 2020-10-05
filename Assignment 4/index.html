@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- New experiment: show a bunch of things, one of them sticks out, see how fast you can point it out -->
+    <head>
+        <title>Whack-a-mole</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <p id="score-container">Score: <span id="score"></span></p>
+            <p id="rounds-container">Rounds left: <span id="rounds"></span></p>
+            <h1 class="title">Whack-a-mole</h1>
+            <h2 class="subtitle">Click the green circle to start</h2>
+            <div id="game-window" class="game-window container">
+                <div id="green-button" class="green-button" onclick="greenButtonClicked()"></div>
+
+                <div id="results">
+                    
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/code.js"></script>
+    </body>
+</html>

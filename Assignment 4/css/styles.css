@@ -1,0 +1,87 @@
+html, * {
+  box-sizing: border-box;
+}
+html, body, button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #E0EBFF;
+  color: #4F4F4F;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+#score-container {
+  position: absolute;
+  left: 15em;
+  top: 20px;
+}
+
+#rounds-container {
+  position: absolute;
+  right: 15em;
+  top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-window {
+  width: 1024px;
+  height: 768px;
+  border: 2px #4F4F4F solid;
+}
+
+.green-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #01DCA1;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.target-button {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #E55770;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.green-button:hover, .target-button:hover {
+  transform: scale(1.1);
+}
+
+.retryButton {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: all .2s ease-in-out;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 16px;
+  border: 0;
+  background-color: #FFCF2F;
+  border-radius: 4px;
+}
+.retryButton:hover, .retryButton:focus {
+  text-decoration: none;
+  transform: scale(1.05);
+}
+.retryButton:active {
+  transform: scale(1);
+}
