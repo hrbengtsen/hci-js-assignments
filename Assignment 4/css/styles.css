@@ -43,6 +43,7 @@ html, body, button {
   width: 1024px;
   height: 768px;
   border: 2px #4F4F4F solid;
+  border-radius: 6px;
 }
 
 .green-button {
