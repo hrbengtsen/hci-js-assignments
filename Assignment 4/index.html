@@ -12,12 +12,12 @@
     </head>
     <body>
         <div class="container">
-            <p id="score-container">Score: <span id="score"></span></p>
+            <p id="score-container">Score: <span id="score" style="display: inline-block"></span></p>
             <p id="rounds-container">Calibration rounds left: <span id="rounds"></span></p>
             <h1 class="title">Whack-a-mole</h1>
-            <h2 id="info" class="subtitle">Click the green circle to start</h2>
+            <h2 id="info" class="subtitle">Click the circle to start calibration</h2>
             <div id="game-window" class="game-window container">
-                <div id="green-button" class="green-button fadeIn" onclick="greenButtonClicked()"></div>
+                <div id="green-button" class="green-button fadeIn calib" onclick="greenButtonClicked()"></div>
 
                 <div id="results">
 

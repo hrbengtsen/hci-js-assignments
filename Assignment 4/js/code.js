@@ -2,12 +2,10 @@
 const gameWindowElement = document.getElementById("game-window");
 const greenButtonElement = document.getElementById("green-button");
 const scoreElement = document.getElementById("score");
-
-const roundsContainerElement = document.getElementById("rounds-container");
-let roundsElement = document.getElementById("rounds");
-
 const resultsElement = document.getElementById("results");
 const infoElement = document.getElementById("info");
+const roundsContainerElement = document.getElementById("rounds-container");
+let roundsElement = document.getElementById("rounds");
 
 // Define rounds & score
 const amountOfRounds = 60;
@@ -69,10 +67,7 @@ function targetClicked() {
         let dist = Math.sqrt(xx * xx + yy * yy);
 
         let id = Math.log2(dist / size) + 1;
-        console.log("DISTANCE: " + dist);
-        console.log("MT: " + mt);
-        console.log("ID: " + id);
-        console.log("ID/MT: " + id / mt);
+
         tps.push(id / mt);
     }
     removeTarget(document.getElementById("target"));
@@ -86,7 +81,21 @@ function targetMissed() {
 }
 
 function updateRoundsAndScore() {
+    let prevScore = scoreElement.innerText;
     scoreElement.innerText = score;
+    console.log(prevScore);
+    console.log(score);
+    if (score > prevScore) {
+        scoreElement.animate([
+            // keyframes
+            { transform: 'translateY(0px)' }, 
+            { transform: 'translateY(-10px)' },
+            { transform: 'translateY(0px)' }
+        ], { 
+            // timing options
+            duration: 300
+        });
+    }
 
     if (isCalibrated) {
         roundsElement.innerText = roundsLeft;
@@ -121,9 +130,7 @@ function createTarget() {
 
     let id = Math.log2(dist / size) + 1;
 
-    console.log("id in game: " + id);
-    console.log("avg tp: " + tp);
-    let delay = (id / tp) * 1000;
+    let delay = (id / tp) * 1000 + 50;
     console.log("Delay: " + delay);
 
     targetTimer = setTimeout(() => targetMissed(), delay);
@@ -181,6 +188,8 @@ function removeTarget(e) {
         calibrationRoundsLeft = amountOfCalibrationRounds;
         roundsElement = roundsContainerElement.firstElementChild;
 
+        greenButtonElement.className = "green-button fadeIn";
+
         let sumOfTps = 0;
         for (let i = 0; i < tps.length; i++) {
             sumOfTps += tps[i];
@@ -189,18 +198,23 @@ function removeTarget(e) {
     }
     else if (roundsLeft > 0) {
         showGreenButton(true);
-        infoElement.innerText = "Click the green circle to continue";
+        infoElement.innerText = "Click the circle to continue";
     }
     else {
         let retryButtonElement = document.createElement("button");
         retryButtonElement.className = "retryButton fadeIn";
         resultsElement.appendChild(retryButtonElement).innerText = "Play again";
         retryButtonElement.onclick = restartGame;
-        infoElement.innerText = "Click the green circle to start";
+        infoElement.innerText = "Click button to play again";
     }
 }
 
 function restartGame() {
+    greenButtonElement.className = "green-button fadeIn calib";
+    infoElement.innerText = "Click the circle to start calibration";
+    isCalibrated = false;
+    roundsContainerElement.innerHTML = `Calibration rounds left: <span id="rounds">${calibrationRoundsLeft}</span>`;
+    roundsElement = roundsContainerElement.firstElementChild;
     showGreenButton(true);
     roundsLeft = amountOfRounds;
     score = 0;
