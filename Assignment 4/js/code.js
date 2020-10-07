@@ -56,7 +56,7 @@ function createTarget() {
     targetElement.onclick = targetClicked;
     targetElement.style.width = `${size}px`;
     targetElement.style.height = `${size}px`;
-    targetElement.className = "target-button";
+    targetElement.className = "target-button fadeIn";
 
     let posX = (Math.random() * (gameWindowElement.offsetWidth - size) + gameWindowElement.getBoundingClientRect().left).toFixed();
     let posY = (Math.random() * (gameWindowElement.offsetHeight - size) + gameWindowElement.getBoundingClientRect().top).toFixed();
@@ -80,7 +80,7 @@ function removeTarget(e) {
     }
     else {
         let retryButtonElement = document.createElement("button");
-        retryButtonElement.className = "retryButton";
+        retryButtonElement.className = "retryButton fadeIn";
         resultsElement.appendChild(retryButtonElement).innerText = "Play again";
         retryButtonElement.onclick = restartGame;
     }
