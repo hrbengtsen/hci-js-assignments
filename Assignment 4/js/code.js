@@ -8,7 +8,7 @@ const roundsContainerElement = document.getElementById("rounds-container");
 let roundsElement = document.getElementById("rounds");
 
 // Define game rounds and score
-const amountOfRounds = 60;
+const amountOfRounds = 6;
 let roundsLeft = amountOfRounds;
 let score = 0;
 scoreElement.innerText = score;
@@ -222,11 +222,23 @@ function removeTarget(e) {
     }
     else {
         // Game finished
-        let retryButtonElement = document.createElement("button");
-        retryButtonElement.className = "retryButton fadeIn";
-        resultsElement.appendChild(retryButtonElement).innerText = "Play again";
-        retryButtonElement.onclick = restartGame;
+        const parameterElement = document.createElement("p");
+        const tpRounded = (Math.round(tp * 100) / 100).toFixed(2);
+        parameterElement.innerText = "Calibration TP: " + tpRounded;
 
+        const hitRateElement = document.createElement("p");
+        const hitRate = (Math.round((score / amountOfRounds) * 100 * 100) / 100).toFixed(2);
+        hitRateElement.innerText = "Hitrate: " + hitRate + "%";
+
+        const retryButtonElement = document.createElement("button");
+        retryButtonElement.className = "retryButton fadeIn";
+        retryButtonElement.onclick = restartGame;
+        retryButtonElement.innerText = "Play again";
+
+        resultsElement.appendChild(parameterElement);
+        resultsElement.appendChild(hitRateElement);
+        resultsElement.appendChild(retryButtonElement);
+        
         infoElement.innerText = "Click button to play again";
     }
 }
