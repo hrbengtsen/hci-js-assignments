@@ -255,6 +255,7 @@ function restartGame() {
     isCalibrated = false;
     roundsLeft = amountOfRounds;
     score = 0;
+    tps = [];
     updateRoundsAndScore();
 
     // Remove retryButton
