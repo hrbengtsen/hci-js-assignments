@@ -8,7 +8,7 @@ const roundsContainerElement = document.getElementById("rounds-container");
 let roundsElement = document.getElementById("rounds");
 
 // Define game rounds and score
-const amountOfRounds = 6;
+const amountOfRounds = 60;
 let roundsLeft = amountOfRounds;
 let score = 0;
 scoreElement.innerText = score;
