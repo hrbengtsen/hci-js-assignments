@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- New experiment: show a bunch of things, one of them sticks out, see how fast you can point it out -->
     <head>
         <title>Assignment Hub</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
+        <style>
+            html, * {
+            box-sizing: border-box;
+            }
+            html, body, button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: #E0EBFF;
+            color: #4F4F4F;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .nav-item {
+                margin: 4px;
+                color: #4F4F4F;
+            }
+
+            .nav-item:hover, .nav-item:focus {
+                opacity: .8;
+            }
+        </style>
         <div class="container">
             <h1 class="title">Assignment Hub</h1>
-            <a href="./Assignment 1/index.html">Go to Assignment 1</a>
-            <a href="./Assignment 4/index.html">Go to Assignment 4</a>
+            <a href="./Assignment 1/index.html" class="nav-item">Go to Assignment 1</a>
+            <a href="./Assignment 4/index.html" class="nav-item">Go to Assignment 4</a>
+            <a href="./Assignment 7/index.html" class="nav-item">Go to Assignment 7</a>
         </div>
     </body>
 </html>
