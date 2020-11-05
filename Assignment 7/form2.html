@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Form 1</title>
+        <title>Form 2</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,15 +11,22 @@
     <body>
         <div class="jumbotron" style="height: 100%; margin-bottom: 0">
           <div style="max-width: 576px; margin-left: auto; margin-right: auto">
-            <h1 class="title">Form 1</h1>
+            <h1 class="title">Form 2</h1>
             <form>
               <div class="form-group">
                 <label for="title">Title</label>
-                <select class="form-control" id="title">
-                  <option value="Choose..." disabled selected>Choose...</option>
-                  <option value="Mr.">Mr.</option>
-                  <option value="Mrs.">Mrs.</option>
-                </select>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="title" id="title1" value="option1" checked>
+                  <label class="form-check-label" for="title1">
+                    Mr.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="title" id="title2" value="option2">
+                  <label class="form-check-label" for="title2">
+                    Mrs.
+                  </label>
+                </div>
               </div>
 
               <div class="form-group">
@@ -34,31 +41,109 @@
 
               <div class="form-group">
                 <label for="dateofbirth">Date of Birth</label>
-                <input type="date" class="form-control" id="dateofbirth">
+                <input type="text" class="form-control" id="dateofbirth" placeholder="dd-mm-åååå">
               </div>
 
               <div class="form-group">
                 <label for="siblings">Number of siblings</label>
-                <input type="number" min="0" max="20" placeholder="0" class="form-control" id="siblings">
-              </div>
-
-              <div class="form-group">
-                <label for="school">Highest school qualification</label>
-                <select class="form-control" id="school">
+                <select class="form-control" id="siblings">
                   <option value="Choose..." disabled selected>Choose...</option>
-                  <option>Without school graduation</option>
-                  <option>Grundskole</option>
-                  <option>Efterskole / 10.</option>
-                  <option>Gymnasium STX</option>
-                  <option>Gymnasium HTX</option>
-                  <option>Gymnasium HHX</option>
-                  <option>Gymnasium HF</option>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                  <option>16</option>
+                  <option>17</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
                 </select>
               </div>
 
               <div class="form-group">
+                <label for="school">Highest school qualification</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school1" value="option1" checked>
+                  <label class="form-check-label" for="school1">
+                    Without school graduation
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school2" value="option2">
+                  <label class="form-check-label" for="school2">
+                    Grundskole
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school3" value="option1">
+                  <label class="form-check-label" for="school3">
+                    Efterskole / 10.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school4" value="option2">
+                  <label class="form-check-label" for="school4">
+                    Gymnasium STX
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school5" value="option1">
+                  <label class="form-check-label" for="school5">
+                    Gymnasium HTX
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school6" value="option2">
+                  <label class="form-check-label" for="school6">
+                    Gymnasium HHX
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="school" id="school7" value="option1">
+                  <label class="form-check-label" for="school7">
+                    Gymnasium HF
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label for="year">Year of graduation</label>
-                <input type="number" min="2000" max="2020" value="2000" class="form-control" id="year">
+                <select class="form-control" id="year">
+                  <option value="Choose..." disabled selected>Choose...</option>
+                  <option>2000</option>
+                  <option>2001</option>
+                  <option>2002</option>
+                  <option>2003</option>
+                  <option>2004</option>
+                  <option>2005</option>
+                  <option>2006</option>
+                  <option>2007</option>
+                  <option>2008</option>
+                  <option>2009</option>
+                  <option>2010</option>
+                  <option>2011</option>
+                  <option>2012</option>
+                  <option>2013</option>
+                  <option>2014</option>
+                  <option>2015</option>
+                  <option>2016</option>
+                  <option>2017</option>
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                </select>
               </div>
 
               <div class="form-group">
@@ -131,17 +216,23 @@
 
                 <div class="form-group">
                   <label for="color">Favorite colour</label>
-                  <input type="color" class="form-control" id="color">
+                  <select class="form-control" id="color">
+                    <option value="Choose..." disabled selected>Choose...</option>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Yellow</option>
+                    <option>Green</option>
+                    <option>Orange</option>
+                    <option>Purple</option>
+                    <option>Pink</option>
+                    <option>Black</option>
+                    <option>White</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" placeholder="example@email.com">
-                </div>
-
-                <div class="form-group">
-                  <label for="address">Address</label>
-                  <input type="text" class="form-control" id="address" placeholder="1234 Main St">
                 </div>
 
                 <div class="form-row">
