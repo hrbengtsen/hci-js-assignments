@@ -14,15 +14,15 @@
           <div class="row" style="max-width: 768px; margin-left: auto; margin-right: auto">
             <div class="col-2">
               <div style="position: -webkit-sticky; position: sticky; top: 32px; margin-top: 8px; text-align: center">
-                <button id="timer" class="btn btn-warning btn-sm"><i class="fas fa-stopwatch"></i> 0s</button>
+                <button title="Time formfilling" id="timer" class="btn btn-warning btn-sm"><i class="fas fa-stopwatch"></i> 0s</button>
               </div>
             </div>
             <div class="col-10">
               <h1 class="title">Form 1</h1>
-              <form>
+              <form class="needs-validation" novalidate>
                 <div class="form-group">
                   <label for="title">Title</label>
-                  <select class="form-control" id="title">
+                  <select class="form-control" id="title" required>
                     <option value="Choose..." disabled selected>Choose...</option>
                     <option value="Mr.">Mr.</option>
                     <option value="Mrs.">Mrs.</option>
@@ -31,27 +31,27 @@
   
                 <div class="form-group">
                   <label for="firstname">First Name</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="John">
+                  <input type="text" class="form-control" id="firstname" placeholder="John" required>
                 </div>
   
                 <div class="form-group">
                   <label for="lastname">Last Name</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                  <input type="text" class="form-control" id="lastname" placeholder="Doe" required>
                 </div>
   
                 <div class="form-group">
                   <label for="dateofbirth">Date of Birth</label>
-                  <input type="date" class="form-control" id="dateofbirth">
+                  <input type="date" class="form-control" id="dateofbirth" required>
                 </div>
   
                 <div class="form-group">
                   <label for="siblings">Number of siblings</label>
-                  <input type="number" min="0" max="20" placeholder="0" class="form-control" id="siblings">
+                  <input type="number" min="0" max="20" placeholder="0" class="form-control" id="siblings" required>
                 </div>
   
                 <div class="form-group">
                   <label for="school">Highest school qualification</label>
-                  <select class="form-control" id="school">
+                  <select class="form-control" id="school" required>
                     <option value="Choose..." disabled selected>Choose...</option>
                     <option>Without school graduation</option>
                     <option>Grundskole</option>
@@ -65,7 +65,7 @@
   
                 <div class="form-group">
                   <label for="year">Year of graduation</label>
-                  <input type="number" min="2000" max="2020" value="2000" class="form-control" id="year">
+                  <input type="number" min="2000" max="2020" value="2000" class="form-control" id="year" required>
                 </div>
   
                 <div class="form-group">
@@ -138,57 +138,37 @@
   
                   <div class="form-group">
                     <label for="color">Favorite colour</label>
-                    <input type="color" class="form-control" id="color">
+                    <input type="color" class="form-control" id="color" required>
                   </div>
   
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                    <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
                   </div>
   
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                       </div>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="city">City</label>
-                      <input type="text" class="form-control" id="city" placeholder="Aarhus">
+                      <input type="text" class="form-control" id="city" placeholder="Aarhus" required>
                     </div>
                     <div class="form-group col-md-2">
                       <label for="zip">Zip</label>
-                      <input type="text" class="form-control" id="zip" placeholder="8000">
+                      <input type="text" class="form-control" id="zip" placeholder="8000" required>
                     </div>
                   </div>
                 </div>
-                <button id="submit" class="btn btn-primary">Submit</button>
+                <button id="submit" class="btn btn-primary" type="submit">Submit</button>
+                <span id="submitState"></span>
               </form>
             </div>
           </div>
         </div>
-        
-        <script>
-          // Example starter JavaScript for disabling form submissions if there are invalid fields
-          (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              var forms = document.getElementsByClassName('needs-validation');
-              // Loop over them and prevent submission
-              var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add('was-validated');
-                }, false);
-              });
-            }, false);
-          })();
-        </script>
         <script type="text/javascript" src="js/code.js"></script>
     </body>
 </html>
