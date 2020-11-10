@@ -12,10 +12,11 @@ timerElement.addEventListener("click", (event) => {
     timerElement.innerHTML = "<i class='fas fa-stopwatch'></i> " + 0 + "s";
   }
   else {
+    let startTime = Date.now();
     durationInterval = setInterval(() => {
-      duration++;
+      duration = Date.now() - startTime;
       timerElement.innerHTML = "<i class='fas fa-stopwatch'></i> " + formatTime(duration) + "s";
-    }, 1);
+    }, 10);
   }
 
   Array.prototype.filter.call(forms, function(form) {
