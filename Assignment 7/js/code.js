@@ -57,3 +57,9 @@ timerElement.addEventListener("click", (event) => {
 function formatTime(millis) {
   return (millis / 1000).toFixed(2);
 }
+
+const siblingRangeElement = document.getElementById("siblingRange");
+
+function updateRangeInput(val) {
+  siblingRangeElement.innerText = val;
+}
